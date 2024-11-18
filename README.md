@@ -1,7 +1,7 @@
 # Sistema Avançado de Previsão com GANN
-### Universidade: *[Nome da Universidade]*
+### Universidade: *Centro Universitário do Pará*
 ### Disciplina: Inteligência Artificial
-### Professora: Apolyana Fonseca
+### Professora: Polyana Fonseca
 
 ### Alunos:
 - João Renan Lopes
@@ -11,7 +11,7 @@
 
 ## 1. Introdução
 
-O Sistema Avançado de Previsão com GANN (Genetic Algorithm Neural Network) é uma implementação que combina algoritmos genéticos com redes neurais para previsão de séries temporais financeiras. O sistema utiliza dados históricos de ações para realizar previsões de preços futuros.
+O Sistema Avançado de Previsão com GANN (Genetic Algorithm Neural Network) é uma implementação que combina algoritmos genéticos com redes neurais para previsão de séries temporais financeiras (ações). O sistema utiliza dados históricos de ações para realizar previsões de preços futuros.
 
 ## 2. Arquitetura do Sistema
 
