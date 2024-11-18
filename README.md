@@ -1,145 +1,204 @@
 # Sistema Avançado de Previsão com GANN
-### Universidade: *Centro Universitário do Pará*
+## Documentação Completa
+
+### Instituição: CESUPA - Centro Universitário do Pará
 ### Disciplina: Inteligência Artificial
-### Professora: Polyana Fonseca
+### Professora: Polyana Fonseca Nascimento
 
-### Alunos:
-- João Renan Lopes
-- Fellipe Torres
-- Pedro Henrique Coimbra
-- Carlos Egger Carvalho
+### Equipe de Desenvolvimento:
+1. João Renan S. Lopes
+2. Carlos Egger
+3. Pedro Coimbra 
+4. Fellipe Torres
 
-## 1. Introdução
+---
 
-O Sistema Avançado de Previsão com GANN (Genetic Algorithm Neural Network) é uma implementação que combina algoritmos genéticos com redes neurais para previsão de séries temporais financeiras (ações). O sistema utiliza dados históricos de ações para realizar previsões de preços futuros.
+## Sumário
 
-## 2. Arquitetura do Sistema
+1. [Abstract](#1-abstract)
+2. [Introdução](#2-introdução)
+3. [Base Teórica](#3-base-teórica)
+4. [Arquitetura do Sistema](#4-arquitetura-do-sistema)
+5. [Implementação](#5-implementação)
+6. [Interface do Usuário](#6-interface-do-usuário)
+7. [Análise de Performance](#7-análise-de-performance)
+8. [Guia de Instalação e Uso](#8-guia-de-instalação-e-uso)
+9. [Resultados e Discussão](#9-resultados-e-discussão)
+10. [Conclusões](#10-conclusões)
+11. [Referências](#11-referências)
 
-### 2.1 Componentes Principais
+---
 
-1. **Rede Neural Híbrida**
-   - LSTM (Long Short-Term Memory)
-   - GRU (Gated Recurrent Unit)
-   - Camadas Dense para processamento final
-   - Normalização e Dropout para regularização
+## 1. Abstract
 
-2. **Algoritmo Genético**
-   - População inicial de redes neurais
-   - Seleção por elitismo
-   - Crossover adaptativo
-   - Mutação com taxa dinâmica
+Este projeto implementa um sistema híbrido avançado para previsão do mercado de ações, baseado no artigo "Hybrid artificial neural network and genetic algorithm model for stock market prediction" (DOI: 10.1007/s13198-021-01209-5). O sistema combina Redes Neurais Artificiais (RNA) com Algoritmos Genéticos (AG) para superar as limitações dos métodos tradicionais de previsão financeira.
 
-3. **Processamento de Dados**
-   - Indicadores técnicos avançados
-   - Normalização robusta
-   - Criação de sequências temporais
+## 2. Introdução
 
-## 3. Funcionalidades
+### 2.1 Contextualização
+O mercado financeiro é caracterizado por sua alta volatilidade e não-linearidade, tornando a previsão de preços um desafio significativo. Métodos tradicionais e técnicas isoladas de IA frequentemente não capturam todas as nuances do mercado.
 
-### 3.1 Previsão de Preços
-- Previsão de valores futuros
-- Análise de múltiplos horizontes temporais
-- Intervalos de confiança
+### 2.2 Objetivo
+Desenvolver um sistema híbrido que combine:
+- Redes Neurais Artificiais para aprendizado profundo
+- Algoritmos Genéticos para otimização
+- Indicadores técnicos avançados para análise de mercado
 
-### 3.2 Indicadores Técnicos
+### 2.3 Justificativa
+Conforme demonstrado no artigo base, a abordagem híbrida supera significativamente os métodos individuais em precisão de previsão, tanto em curto quanto em longo prazo.
+
+## 3. Base Teórica
+
+### 3.1 Redes Neurais Artificiais
+- Arquitetura LSTM-GRU híbrida
+- Camadas de normalização em lote
+- Dropout para regularização
+- Funções de ativação adaptativas
+
+### 3.2 Algoritmos Genéticos
+- Seleção por elitismo
+- Crossover adaptativo
+- Mutação com taxa dinâmica
+- Avaliação de fitness baseada em erro de previsão
+
+### 3.3 Indicadores Técnicos
 - RSI (Relative Strength Index)
 - MACD (Moving Average Convergence Divergence)
 - Bollinger Bands
-- Médias Móveis (SMA e EMA)
-- ATR (Average True Range)
-- Volume e OBV (On-Balance Volume)
-- MFI (Money Flow Index)
-- ROC (Rate of Change)
+- Médias Móveis (SMA/EMA)
+- Indicadores de Volume (OBV, MFI)
 
-### 3.3 Análise de Performance
+## 4. Arquitetura do Sistema
+
+### 4.1 Componentes Principais
+1. **Módulo de Dados**
+   - Coleta de dados via YFinance
+   - Pré-processamento e normalização
+   - Geração de features técnicas
+
+2. **Módulo de RNA**
+   - Camada LSTM (64 unidades)
+   - Camada GRU (32 unidades)
+   - Camadas Dense para processamento final
+   - Normalização e Dropout
+
+3. **Módulo de AG**
+   - População de redes neurais
+   - Operadores genéticos adaptados
+   - Otimização multi-objetivo
+
+4. **Interface do Usuário**
+   - Dashboard Streamlit
+   - Visualizações interativas
+   - Controles de parâmetros
+
+## 5. Implementação
+
+### 5.1 Tecnologias Utilizadas
+```python
+import numpy as np
+import pandas as pd
+import tensorflow as tf
+import yfinance as yf
+import streamlit as st
+import plotly.graph_objects as go
+```
+
+### 5.2 Classes Principais
+
+#### GANNMelhorado
+```python
+class GANNMelhorado:
+    def __init__(self, tamanho_populacao, num_geracoes, ...):
+        # Inicialização de parâmetros
+
+    def treinar(self, X, y):
+        # Implementação do treinamento
+
+    def prever(self, X):
+        # Implementação da previsão
+```
+
+### 5.3 Métodos Principais
+- `criar_features_avancadas()`: Geração de indicadores
+- `criar_sequencias_temporais()`: Preparação de dados
+- `crossover_adaptativo()`: Operador genético
+- `mutacao_adaptativa()`: Operador genético
+- `avaliar_modelo()`: Métricas de performance
+
+## 6. Interface do Usuário
+
+### 6.1 Configurações
+- Seleção de ativo financeiro
+- Período de análise
+- Parâmetros do algoritmo genético
+- Horizonte de previsão
+
+### 6.2 Visualizações
+- Gráfico de preços real vs previsto
+- Intervalos de confiança
+- Evolução do fitness
+- Métricas de performance
+
+## 7. Análise de Performance
+
+### 7.1 Métricas
 - MAPE (Mean Absolute Percentage Error)
 - RMSE (Root Mean Square Error)
 - MSE (Mean Square Error)
-- Correlação entre valores reais e previstos
+- Correlação
 
-## 4. Interface do Usuário
+### 7.2 Benchmark
+Comparação com:
+- Modelos tradicionais
+- RNA pura
+- AG puro
 
-### 4.1 Parâmetros Configuráveis
-- Tamanho da população (10-200)
-- Número de gerações (10-300)
-- Taxa de mutação (0.01-0.5)
-- Taxa de crossover (0.1-1.0)
-- Tamanho da elite (1-20)
-- Janela temporal (5-30)
-- Horizonte de previsão (1-4 dias)
+## 8. Guia de Instalação e Uso
 
-### 4.2 Visualizações
-- Gráfico de previsões vs valores reais
-- Intervalos de confiança
-- Evolução do fitness ao longo das gerações
-- Métricas de performance em tempo real
-
-## 5. Implementação Técnica
-
-### 5.1 Tecnologias Utilizadas
-- Python 3.x
-- TensorFlow/Keras para redes neurais
-- Pandas para manipulação de dados
-- NumPy para computação numérica
-- Streamlit para interface web
-- Plotly para visualizações
-- YFinance para dados financeiros
-
-### 5.2 Principais Classes e Métodos
-
-#### Classe GANNMelhorado
-```python
-# Métodos principais:
-- __init__(): Inicialização com parâmetros configuráveis
-- treinar(): Execução do algoritmo genético
-- prever(): Realização de previsões
-- criar_features_avancadas(): Geração de indicadores técnicos
-- avaliar_modelo(): Cálculo de métricas de performance
-```
-
-## 6. Como Utilizar
-
-1. **Instalação de Dependências**
+### 8.1 Requisitos
 ```bash
-pip install numpy pandas yfinance sklearn tensorflow ta plotly streamlit
+pip install -r requirements.txt
 ```
 
-2. **Execução do Sistema**
+### 8.2 Execução
 ```bash
-streamlit run nome_do_arquivo.py
+streamlit run gann_trading.py
 ```
 
-3. **Configuração**
-   - Inserir código da ação (ex: PETR4.SA)
-   - Definir período de análise
-   - Ajustar parâmetros do algoritmo genético
-   - Iniciar análise
+### 8.3 Configuração
+1. Inserir código do ativo
+2. Definir parâmetros
+3. Iniciar análise
 
-## 7. Considerações de Performance
+## 9. Resultados e Discussão
 
-- O sistema utiliza processamento paralelo para otimização
-- Adaptação automática dos parâmetros genéticos durante o treinamento
-- Escalabilidade para diferentes ativos financeiros
-- Gestão de memória otimizada para grandes conjuntos de dados
+### 9.1 Performance
+- Precisão superior em períodos de alta volatilidade
+- Adaptação eficiente a diferentes ativos
+- Tempo de processamento otimizado
 
-## 8. Limitações e Melhorias Futuras
+### 9.2 Limitações
+- Dependência de hardware
+- Sensibilidade a parâmetros iniciais
+- Custo computacional
 
-### 8.1 Limitações Atuais
-- Processamento limitado ao hardware disponível
-- Dependência da qualidade dos dados históricos
-- Latência em ativos de alta volatilidade
+## 10. Conclusões
 
-### 8.2 Melhorias Propostas
-- Implementação de GPU para processamento
-- Adição de mais indicadores técnicos
-- Otimização multi-objetivo
-- Interface mais interativa
-- Suporte a múltiplos ativos simultaneamente
+O sistema GANN demonstrou-se eficaz na previsão de séries temporais financeiras, corroborando os resultados do artigo base. A implementação adiciona funcionalidades práticas e uma interface moderna, tornando-o adequado tanto para uso acadêmico quanto profissional.
 
-## 9. Conclusão
+## 11. Referências
 
-O Sistema GANN representa uma abordagem avançada para previsão de séries temporais financeiras, combinando o poder dos algoritmos genéticos com redes neurais modernas. Sua implementação modular e interface intuitiva permitem tanto uso acadêmico quanto prático no mercado financeiro.
+1. Artigo Base:
+```
+Título: Hybrid artificial neural network and genetic algorithm model for stock market prediction
+Journal: International Journal of System Assurance Engineering and Management
+DOI: 10.1007/s13198-021-01209-5
+```
 
----
-*Data da Documentação: 18 de Novembro de 2024*
+2. Bibliotecas e Frameworks:
+- TensorFlow: https://tensorflow.org
+- Streamlit: https://streamlit.io
+- YFinance: https://pypi.org/project/yfinance
+
 
