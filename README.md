@@ -152,19 +152,7 @@ pip install -r requirements.txt
 ```bash
 streamlit run gann_trading.py
 ```
-
-## 9. Resultados e Discussão
-
-### 9.1 Performance
-- Precisão superior em períodos de alta volatilidade
-- Adaptação eficiente a diferentes ativos
-- Tempo de processamento otimizado
-
-## 10. Conclusões
-
-O sistema GANN demonstrou-se eficaz na previsão de séries temporais financeiras, corroborando os resultados do artigo base. A implementação adiciona funcionalidades práticas e uma interface moderna, tornando-o adequado tanto para uso acadêmico quanto profissional.
-
-## 11. Referências
+## 9. Referências
 
 1. Artigo Base:
 ```
