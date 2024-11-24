@@ -191,7 +191,7 @@ O sistema GANN demonstrou-se eficaz na previsão de séries temporais financeira
 
 1. Artigo Base:
 ```
-Título: Hybrid artificial neural network and genetic algorithm model for stock market prediction
+Título: Integration of genetic algorithm with artificial neural network for stock market forecasting
 Journal: International Journal of System Assurance Engineering and Management
 DOI: 10.1007/s13198-021-01209-5
 ```
