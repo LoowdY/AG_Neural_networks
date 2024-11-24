@@ -1,5 +1,5 @@
+
 # Sistema Avançado de Previsão com GANN
-## Documentação Completa
 
 ### Instituição: CESUPA - Centro Universitário do Pará
 ### Disciplina: Inteligência Artificial
@@ -119,13 +119,6 @@ class GANNMelhorado:
         # Implementação da previsão
 ```
 
-### 5.3 Métodos Principais
-- `criar_features_avancadas()`: Geração de indicadores
-- `criar_sequencias_temporais()`: Preparação de dados
-- `crossover_adaptativo()`: Operador genético
-- `mutacao_adaptativa()`: Operador genético
-- `avaliar_modelo()`: Métricas de performance
-
 ## 6. Interface do Usuário
 
 ### 6.1 Configurações
@@ -148,12 +141,6 @@ class GANNMelhorado:
 - MSE (Mean Square Error)
 - Correlação
 
-### 7.2 Benchmark
-Comparação com:
-- Modelos tradicionais
-- RNA pura
-- AG puro
-
 ## 8. Guia de Instalação e Uso
 
 ### 8.1 Requisitos
@@ -166,22 +153,12 @@ pip install -r requirements.txt
 streamlit run gann_trading.py
 ```
 
-### 8.3 Configuração
-1. Inserir código do ativo
-2. Definir parâmetros
-3. Iniciar análise
-
 ## 9. Resultados e Discussão
 
 ### 9.1 Performance
 - Precisão superior em períodos de alta volatilidade
 - Adaptação eficiente a diferentes ativos
 - Tempo de processamento otimizado
-
-### 9.2 Limitações
-- Dependência de hardware
-- Sensibilidade a parâmetros iniciais
-- Custo computacional
 
 ## 10. Conclusões
 
@@ -195,10 +172,3 @@ Título: Integration of genetic algorithm with artificial neural network for sto
 Journal: International Journal of System Assurance Engineering and Management
 DOI: 10.1007/s13198-021-01209-5
 ```
-
-2. Bibliotecas e Frameworks:
-- TensorFlow: https://tensorflow.org
-- Streamlit: https://streamlit.io
-- YFinance: https://pypi.org/project/yfinance
-
-
